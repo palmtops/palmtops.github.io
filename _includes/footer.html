@@ -1,0 +1,20 @@
+<footer class="bg-primary dark relative">
+  <div class="container">
+      <div class="row v-center mobile-center">
+          <div class="col-lg-4 tablet-lg-text-center tablet-lg-top-30">
+            {%- include social.html -%}
+          </div><!-- / footer-left-area -->
+          <div class="col-lg-4 footer-center-area text-center tablet-lg-top">
+              <a href="#top" class="btn btn-lg btn-icon btn-white btn-circle btn-back-top"><i class="bi bi-chevron-up"></i></a>
+              <p>{{- site.description | escape -}}</p>
+          </div><!-- / footer-center-area -->
+          <div class="col-lg-4 tablet-lg-text-center text-right">
+              <p>
+                  <a href="{{ "/" | relative_url }}" class="text-link mr-30">Home</a>
+                  <a href="{{ "/about" | relative_url }}" class="text-link mr-30">About</a>
+                  <a href="{{ "/feed.xml" | relative_url }}" class="text-link">RSS</a>
+              </p>
+          </div><!-- / footer-right-area -->
+      </div><!-- / row -->
+  </div><!-- / container -->
+</footer>

@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<div class="row">
+  <div class="col-lg-8 col-xl-9 page-content">
+      <div class="promo-box">
+          <div id="title" class="doc-wrapper">
+              <h2 class="doc-title">{{ page.title | escape }}
+                <!-- <a href="#title"><i class="fas fa-hashtag"></i></a> -->
+              </h2>
+              {{ content }}
+          </div><!-- / doc-wrapper -->
+
+          <div class="spacer">&nbsp;</div>
+
+      </div><!-- / promo-box -->
+  </div><!-- / column -->
+
+  {%- include sidebar.html -%}
+
+</div><!-- / row -->

@@ -1,0 +1,69 @@
+---
+layout: default
+---
+<!-- 
+
+    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+    <ul class="post-list">
+      {%- for post in site.posts -%}
+      <li>
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        <span class="post-meta">{{ post.date | date: date_format }}</span>
+        <h3>
+          <a class="post-link" href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+          </a>
+        </h3>
+        {%- if site.show_excerpts -%}
+          {{ post.excerpt }}
+        {%- endif -%}
+      </li>
+      {%- endfor -%}
+    </ul>
+
+
+-->
+
+<div class="row">
+  <div class="col-lg-8 col-xl-9 page-content">
+      <div class="promo-box">
+          <div id="title" class="doc-wrapper">
+              {%- if page.title -%}
+              <h2 class="doc-title">{{ page.title | escape }}
+                <!-- <a href="#title"><i class="fas fa-hashtag"></i></a> -->
+              </h2>
+              {%- endif -%}
+            
+              {{ content }}
+          </div><!-- / doc-wrapper -->
+
+          <div class="spacer">&nbsp;</div>
+
+          <h2 class="doc-title">{{ page.list_title | default: "Blog" }}</h2>
+
+          {%- if site.posts.size > 0 -%}
+            {%- for post in site.posts -%}
+
+          <div id="TODOid" class="doc-wrapper">
+            
+              <h4 class="blog-link">
+                <a class="" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+                <!-- <a href="#TODOid"><i class="fas fa-hashtag"></i></a> -->
+              </h4>
+            </a>
+              {%- if site.show_excerpts -%}
+              {%- endif -%}
+              {{ post.excerpt }}
+          </div><!-- / doc-wrapper -->
+
+          <div class="spacer">&nbsp;</div>
+
+            {%- endfor -%}
+          {%- endif -%}
+          
+      </div><!-- / promo-box -->
+  </div><!-- / column -->
+
+  {%- include sidebar.html -%}
+
+</div><!-- / row -->

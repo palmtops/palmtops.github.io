@@ -1,0 +1,334 @@
+/*---------- container ----------*/
+
+.main-container {
+    position: relative;
+    padding: 100px 0 100px 0;
+}
+
+.bottom-element {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -25%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+}
+
+.bottom-element .promo-box {
+    width: 100%;
+}
+
+.bottom-element.xs {
+    bottom: -5%;
+}
+
+.bottom-element.sm {
+    bottom: -10%;
+}
+
+.bottom-element.lg {
+    bottom: -20%;
+}
+
+.bottom-element.xl {
+    bottom: -25%;
+}
+
+.bottom-element.xxl {
+    bottom: -30%;
+}
+
+.pnf-container {
+    min-height: 100vh;
+    height: 100%;
+}
+
+.error-title {
+    font-size: 14rem;
+}
+
+.demo-item-link .card {
+    transition: all 0.2s ease-in-out;
+}
+
+.demo-item-link:hover .card {
+    transform: translateY(-5px);
+    box-shadow: $shadow-lg;
+}
+
+.demo-item-link .card-title {
+    color: $title-color;
+    font-size: 1.125rem;
+    transition: ease-in-out 0.3s;
+}
+
+.demo-item-link:hover .card-title {
+    color: $primary;
+}
+
+.demo-item-link .card-body {
+    padding: 1.75rem;
+}
+
+/*---------- end of container ----------*/
+
+
+
+/*---------- sections ----------*/
+
+section {
+    position: relative;
+    padding: 30px 0;
+}
+
+section.big {
+    padding: 50px 0;
+}
+
+section.lg {
+    padding: 100px 0;
+}
+
+section.xl {
+    padding: 200px 0;
+}
+
+section.xxl {
+    padding: 300px 0;
+}
+
+section.fh {
+    height: 100vh;
+}
+
+/*-------- headers --------*/
+
+header {
+    padding: 50px 0;
+    position: relative;
+}
+
+header.big {
+    padding: 100px 0;
+}
+
+header.lg {
+    padding: 120px 0;
+}
+
+header.xl {
+    padding: 300px 0;
+}
+
+header.xxl {
+    padding: 390px 0;
+}
+
+header.fh {
+    height: 100vh;
+}
+
+.page-header {
+    text-align: center;
+    padding: 170px 0 100px 0;
+}
+
+.page-header.w-absolute-nav .page-title {
+    padding-top: 240px;
+}
+
+.page-header.w-absolute-nav {
+    padding: 0 0 150px 0;
+}
+
+.page-header .breadcrumb {
+    text-align: center;
+    display: block;
+}
+
+
+header.dark .page-title {
+    color: $white;
+    text-shadow: 0px 3px 10px rgba(0,0,0,0.20);
+}
+
+header .page-title {
+    color: $title-color;
+    text-shadow: 0px 3px 10px rgba(0,0,0,0.10);
+}
+
+header h1.page-title {
+    font-size: 54px;
+}
+
+header h1.fixed-title {
+    transform: translateY(-50%);
+    position: fixed;
+    top: 380px;
+    left: 0;
+    right: 0;
+}
+
+.header-image-bottom {
+    pointer-events: none;
+    position: relative;
+    z-index: 1;
+    margin-bottom: -2px;
+}
+
+.header-content {
+    position: relative;
+    padding-top: 100px;
+    z-index: 2;
+}
+
+.header-content.lg {
+    padding-top: 150px;
+}
+
+.header-content.xl {
+    padding-top: 180px;
+}
+
+.header-content.xxl {
+    padding-top: 350px;
+}
+
+.header-content.xxxl {
+    padding-top: 380px;
+}
+
+.header-content.slide-header {
+    padding: 350px 0;
+}
+
+.section-title {
+    font-size: 54px;
+}
+
+header .title, section h2.section-title {
+    font-size: 54px;
+}
+
+/*-------- end of headers --------*/
+
+
+
+/*------- footers -------*/
+
+footer {
+    background: $white;
+    padding: 50px 0;
+}
+
+footer p {
+    color: $title-color;
+    margin-bottom: 0;
+}
+
+footer .text-link {
+    color: $title-color;
+}
+
+footer .text-link:hover {
+    color: $primary;
+}
+
+footer.big {
+    padding: 70px 0;
+}
+
+footer.light {
+    background: $secondary;
+}
+
+footer.mid {
+    background: $secondary-dark;
+}
+
+footer.dark {
+    background: $dark-grey;
+}
+
+footer.dark p {
+    color: $light-grey;
+}
+
+footer.dark a {
+    color: $white;
+}
+
+footer.dark a:hover {
+    color: $grey;
+}
+
+.footer-left-area {
+    text-align: left;
+}
+
+.footer-right-area {
+    text-align: right;
+}
+
+footer.dark.bg-primary a, footer.dark.bg-primary-dark a {
+    color: $white;
+}
+
+footer.dark.bg-primary a:hover, footer.dark.bg-primary-dark a:hover {
+    opacity: 0.75;
+}
+
+.footer-link, .footer-link:focus {
+    font-weight: $regular;
+    color: $inverse-color;
+}
+
+.footer-link:hover {
+    color: $inverse-color;
+    opacity: 0.6;
+}
+
+.dark .footer-link {
+    color: $secondary;
+}
+
+.dark .footer-link:hover {
+    color: $secondary;
+    opacity: 0.6;
+}
+
+.footer-logo {
+    max-width: 120px;
+}
+
+.footer-widget-area {
+    padding: 50px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05)
+}
+
+.footer-widget-area.dark {
+    border-bottom: 1px solid rgba(11,11,11,0.3);
+}
+
+.footer-widget-area .widget {
+    background: transparent;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+}
+
+.footer-widget-area .widget-title {
+    margin-bottom: 25px;
+}
+
+.footer-widget-area .menu-list li:before, .footer-widget-area .menu-list a:before {
+    font-size: 70%;
+}
+
+
+
+/*------- end of footers -------*/
+
+/*---------- end of sections ----------*/

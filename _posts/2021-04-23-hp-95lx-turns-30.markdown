@@ -1,0 +1,9 @@
+---
+layout: post
+title:  "HP 95LX Turns 30!"
+date:   2021-04-23 07:14:28 -0500
+categories: palmtop 95lx
+---
+
+###### (and palmtop.dev turns 0)
+On [April 23, 1991](http://www.hp.com/hpinfo/abouthp/histnfacts/museum/personalsystems/0025/0025history.html), Hewlett-Packard Company unveiled project Jaguar — better known as the [HP 95LX](http://www.hpmuseum.net/display_item.php?hw=202) Palmtop PC. In celebration of this monumental anniversary, we are launching [palmtop.dev](/) - your source for comprehensive software development and exploration information for the modern palmtop user!  
