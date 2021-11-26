@@ -1,0 +1,26 @@
+---
+layout: post
+title:  "TCP/IP and Web Browsing on the HP 200LX"
+date:   2021-09-12 23:07:28 -0500
+categories: palmtop 200lx networking
+---
+
+Once you've configured [networking on the HP 200LX]({% post_url 2021-09-11-hp-200lx-networking %}), you may be wondering what to do next. Many of the connected applications we use today require a [TCP/IP stack](https://en.wikipedia.org/wiki/Internet_protocol_suite). While operating systems such as *Windows 95* and above include such networking essentials, the same is not true of MS-DOS. This means that extra work is required to cruise the information superhighway from your palmtop. One solution is the [mTCP](http://www.brutman.com/mTCP/) library and TCP/IP application suite. While it is not a TSR that adds TCP/IP support for use by whichever applications you care to use, it includes a number of utilities that may satisfy all of your networking needs. These include a DHCP client for automatically configuring your connection, `PING` for confirming connectivity, a Telnet client, an FTP client and server, and even an HTTP server. 
+
+To get started with *mTCP*, download the [latest binaries](http://www.brutman.com/mTCP/mTCP_2020-03-07.zip) and unzip them on your modern computer. Once extracted, the files total over 1MB, and even for a 2MB 200LX, that's a big chunk of the available onboard storage, which is the only place you can put *mTCP*, given that your PCMCIA slot will be occupied by your Ethernet card. When transferring files to your palmtop, you may wish to exclude `FTPSRV.EXE` and `HTTPSERV.EXE`, which are each over `100K` - since the battery-powered 200LX is probably not the best device to use as a server. You can save more space if you find that there are other `EXE`s in the collection that you end up not using often - the library is built into each app, so you can run as many or as few as you like, with no concern for dependencies.  
+
+One thing that you will want to ensure you have regardless of the tool you use is a configuration file. Copy `SAMPLE.CFG` from the included `SAMPLES` directory to the name of your choice (for example, `200.CFG`) and at minimum, update the `packetint` setting. For the [*Socket Low Power Ethernet CF Card* used in our previous post]({% post_url 2021-09-11-hp-200lx-networking %}), the interrupt is `0x66`. If you are using DHCP, then most of the other settings can be left as-is for now. If you named your config file `200.CFG` and extracted *mTCP* to a folder of the same name, you'll want to add the following to your `AUTOEXEC.BAT`:  
+
+```bat
+MTCPCFG=C:\MTCP\200.CFG
+```
+
+After doing so, reboot your device (with your Ethernet card installed, configured, and connected) and change directory to `C:\MTCP`. The first tool you will want to run is `DHCP.EXE`. This will automatically update your `CFG` file with your assigned local IP address, DNS, and gateway settings. If you are not using DHCP, or want a static IP, you can update these settings by hand. After completing this step, try `PING 8.8.8.8` to ensure you're connected able to talk to the internet. Feel free to play with whichever tools you like at this point, but some highlights we enjoyed with this setup include:  
+
+* downloading files directly from the [S.U.P.E.R Site](http://mizj.com/) with `HTGET.EXE`
+* downloading, modifying, and uploading a web page with `FTP.EXE`
+* connecting to [TELEHACK](https://telehack.com/) using `TELNET.EXE`
+
+###### Bonus: Browsing the Web
+
+The tools included with *mTCP* are extremely useful, but there's one common internet application missing that most people use daily: a web browser! Thankfully, another project built using the *mTCP* library can fill this need: the [MicroWeb](https://github.com/jhhoward/MicroWeb) web browser for 8088 class machines. Download the latest `MICROWEB.EXE` [from the releases page on the project repo](https://github.com/jhhoward/MicroWeb/releases), copy it to the same `C:\MTCP` folder as the other tools, and run it with the `/C` option to force `640x200` *CGA* mode, then start surfing the web! You will probably want to invert the 200LX's screen using `ON`+`/` (or the software's own `F2` command; for some reason the `/I` command line option does not seem to work with CGA), and you will discover fairly quickly that many modern web sites force HTTPS, which the 200LX cannot handle, since it lacks the processing power to decrypt data in real time. However, proxy services such as [FrogFind](http://frogfind.com/) can be used to strip modern sites of their JavaScript, CSS, and encryption, making them far easier to view on older machines, and *MicroWeb* will redirect HTTPS URLs to the service automatically. As the name implies, *FrogFind* also includes a search engine, since most users are accustomed to tossing vague terms into an omnibox rather than painstakingly entering actual URLs. Since there is no mouse available on most palmtops, you'll want to familiarize yourself with *MicroWeb*'s [keyboard shortcuts](https://github.com/jhhoward/MicroWeb#keyboard-shortcuts). While *MicroWeb* does not support images at this time, let alone JavaScript and CSS, and is limited in what it can load by available RAM, it is still an incredibly useful tool for consuming online information.  
