@@ -2,7 +2,7 @@
 layout: post
 title:  "HP 95LX Turns 30!"
 date:   2021-04-23 07:14:28 -0500
-categories: palmtop 95lx
+categories: 95lx news
 ---
 
 ###### (and palmtop.dev turns 0)
